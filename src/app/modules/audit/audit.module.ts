@@ -4,10 +4,12 @@ import { CommonModule } from '@angular/common';
 import { AuditRoutingModule } from './audit-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { MaterialModule } from 'src/app/material.module';
+import { AuditEntriesTableComponent } from './components/audit-entries-table/audit-entries-table.component';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    AuditEntriesTableComponent
   ],
   imports: [
     CommonModule,

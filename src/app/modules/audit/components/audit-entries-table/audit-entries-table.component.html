@@ -1,0 +1,45 @@
+<table mat-table [dataSource]="entries" class="mat-elevation-z8" *ngIf='entries' style="width: 100%;">
+
+    <!-- Log id -->
+    <ng-container matColumnDef="auditLogId">
+        <th mat-header-cell *matHeaderCellDef> Log Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.auditLogId}} </td>
+    </ng-container>
+
+    <!-- User Id -->
+    <ng-container matColumnDef="userId">
+        <th mat-header-cell *matHeaderCellDef> User Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+    </ng-container>
+
+    <!-- Date -->
+    <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    </ng-container>
+
+    <!-- keys -->
+    <ng-container matColumnDef="keyValues">
+        <th mat-header-cell *matHeaderCellDef> Keys </th>
+        <td mat-cell *matCellDef="let element">{{element.keyValues}}
+            <!-- <pre>{{element.keyValues | json}}</pre> -->
+        </td>
+
+    </ng-container>
+
+    <!-- new values -->
+    <ng-container matColumnDef="newValues">
+        <th mat-header-cell *matHeaderCellDef> New values </th>
+        <td mat-cell *matCellDef="let element"> {{element.newValues}} </td>
+    </ng-container>
+
+    <!-- old values -->
+    <ng-container matColumnDef="oldValues">
+        <th mat-header-cell *matHeaderCellDef> Old values </th>
+        <td mat-cell *matCellDef="let element"> {{element.oldValues}} </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

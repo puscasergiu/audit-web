@@ -1,20 +1,24 @@
-<mat-card style="width: 800px;">
+<mat-card style="width: 1800px;">
 
     <h4>Please select a table</h4>
 
     <mat-form-field appearance="fill" style="display:block">
 
-        <mat-select matNativeControl required>
-            <mat-option value="volvo">Customer</mat-option>
-            <mat-option value="saab">Table 1</mat-option>
-            <mat-option value="mercedes">Table 2</mat-option>
-            <mat-option value="audi">Table 3</mat-option>
+        <mat-select matNativeControl [(value)]="selectedTable">
+            <mat-option value="customer">Customer</mat-option>
+            <mat-option value="test">Table 1</mat-option>
+            <mat-option value="test">Table 2</mat-option>
+            <mat-option value="test">Table 3</mat-option>
         </mat-select>
 
     </mat-form-field>
 
-    <button mat-raised-button color="primary" style="width: 100%;">Load entries</button>
+    <button mat-raised-button color="primary" style="width: 100%;" (click)='loadEntries()'>Load entries</button>
 
+    <mat-card-content style="margin-top: 0.5rem;">
 
+        <app-audit-entries-table [entries]='entries' *ngIf='entries'></app-audit-entries-table>
+
+    </mat-card-content>
 
 </mat-card>
