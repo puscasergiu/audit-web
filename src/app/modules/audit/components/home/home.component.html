@@ -6,14 +6,11 @@
 
         <mat-select matNativeControl [(value)]="selectedTable">
             <mat-option value="customer">Customer</mat-option>
-            <mat-option value="test">Table 1</mat-option>
-            <mat-option value="test">Table 2</mat-option>
-            <mat-option value="test">Table 3</mat-option>
         </mat-select>
 
     </mat-form-field>
 
-    <button mat-raised-button color="primary" style="width: 100%;" (click)='loadEntries()'>Load entries</button>
+    <button mat-raised-button color="primary" style="width: 100%;" (click)='loadEntries()' [disabled]='!selectedTable'>Load entries</button>
 
     <mat-card-content style="margin-top: 0.5rem;">
 
