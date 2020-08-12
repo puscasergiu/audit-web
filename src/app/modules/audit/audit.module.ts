@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { AuditRoutingModule } from './audit-routing.module';
 import { HomeComponent } from './components/home/home.component';
+import { MaterialModule } from 'src/app/material.module';
 
 @NgModule({
   declarations: [HomeComponent],
   imports: [
     CommonModule,
-    AuditRoutingModule
+    AuditRoutingModule,
+    MaterialModule
   ],
   exports: [
     AuditRoutingModule
